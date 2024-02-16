@@ -17,6 +17,8 @@ function App() {
     let task = e.target.elements.task.value;
     if(task !== ''){
     dispatch({type: 'ADD', title: task})
+    }else {
+      alert('Enter your task!!!')
     }
     e.target.elements.task.value = ''
   }
@@ -34,6 +36,8 @@ function App() {
     let newTodo = e.target.elements.newTodo.value;
     if(newTodo !== ''){
       dispatch({type: "UPDATE", id: todo.id, title: newTodo})
+    }else{
+      alert('Edit your task!!')
     }
   }
 
@@ -47,16 +51,23 @@ function App() {
   }, [todos])
   return (
     <div className='todos-wrapper'>
+      <h1>TODO LIST</h1>
       <form onSubmit={formHandler} className="input-wrapper">
       <input type="text" name="task" /> <button type='submit' >add</button>
       </form>
       <div className='todos'>
-      {todos.map((todo) => <Todo key={todo.id} todo={todo}
-       handleComplete={handleComplete}
-       deleteTodo={deleteTodo}
-       editTodo={editTodo}
-       updateTodo={updateTodo}
-      /> )}
+      {
+        todos.length === 0 ? 
+        (<h2>No task added</h2>):
+        (<>
+        {todos.map((todo) => <Todo key={todo.id} todo={todo}
+        handleComplete={handleComplete}
+        deleteTodo={deleteTodo}
+        editTodo={editTodo}
+        updateTodo={updateTodo}
+        /> )}
+        </>) 
+      }
       </div>
     </div>
   )

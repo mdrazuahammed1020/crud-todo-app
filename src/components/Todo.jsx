@@ -28,8 +28,8 @@ function Todo(props) {
           <span className='butttons'>
             {
               !todo.editAble ?
-               (<><button onClick={()=> deleteTodo(todo.id)} >Delete</button>
-               <button onClick={()=> editTodo(todo.id)} >Edit</button></>)
+               (<><button style={{color: 'red'}} onClick={()=> deleteTodo(todo.id)} >Delete</button>
+               <button style={{color: 'green'}} onClick={()=> editTodo(todo.id)} >Edit</button></>)
                :
                ''
             }
