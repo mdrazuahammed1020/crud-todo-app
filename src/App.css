@@ -1,0 +1,39 @@
+
+.todos-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 18px;
+}
+
+.todos{
+    width: 50%;
+    margin-top: 50px;
+}
+
+.todo{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+input, button{
+    outline: none;
+    border: 1px solid black;
+    font-size: 18px;
+}
+
+input{
+    padding: 10px;
+}
+
+button{
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+input[]
